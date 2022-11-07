@@ -17,10 +17,8 @@
     <!-- Static CSS -->
     <link rel="stylesheet" href={% static "css/style.css" %} >
     <!-- Datatable CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.css"/>
-    
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"> -->
-    <title>Employee mx</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <title>Employee</title>
 </head>
 <body>
    <div class="wrapper">
@@ -61,16 +59,31 @@
    <!-- Jquery -->
    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
    <!-- Datatables jquery JS -->
-   <!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> -->
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-   <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js"></script>
-
+   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
    <!-- Datatable script-->
 
    <script>
- 
+    $("#example").DataTable({
+        // Databse configurations
+        paging: true,
+        pageLength: 5,
+        lengthChange: true,
+        autoWidth: true,
+        searching: true,
+        bInfo:true,
+        bSort:true,
+        // "columnDefs": [{
+        //     "targets": [4,5],
+        //     "orderable": false
+        // }]
+    });
+    // eneble searchbox outside
+    var newSearch = $("#example").DataTable();
+    $('#search').keyup(function() {
+        newSearch.search($(this).val()).draw();
+    })
+    
    </script>
 
 </body>
@@ -81,5 +94,3 @@ https://code.jquery.com/jquery-3.5.1.js
 https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js
 https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js
 -->
-
-
