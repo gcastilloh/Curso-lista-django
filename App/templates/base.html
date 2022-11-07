@@ -1,0 +1,85 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <!-- FAVICON -->
+    <link href={% static "img/favicon.ico" %} rel="shortcut icon">
+    <!-- logo-->
+    <link href={% static "img/logo.ico" %} rel="shortcut icon">
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Static CSS -->
+    <link rel="stylesheet" href={% static "css/style.css" %} >
+    <!-- Datatable CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.css"/>
+    
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"> -->
+    <title>Employee mx</title>
+</head>
+<body>
+   <div class="wrapper">
+    <header>
+        <nav class="navbar navbar-expand-lg nav-var-dark bg-dark">
+            <div class="col-sm">
+                <a class="navbar-brand flex-grow-1" style="text-align: center; color: white; margin-left: 25px;" >
+                    {% block navbar-contentent %} {% endblock navbar-contentent %}
+                </a>
+            </div>
+            <!-- Input search Outside -->
+            <div class="d-flex" style="margin-right: 25px;">
+                <div class="input-group input-group-sm">
+                    <input class="form-control" type="search" id="search" placeholder="Live Search" arial-label="Search"">
+                    <a href="{% url 'home' %}" class="btn btn-secondary btn-sm"><i class="fas fa-sync-alt"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ====== Block content (ROOT) ==== -->
+    {%block content%} {%endblock content%}
+
+   </div> <!-- end wrapper-->
+
+   <footer class="bg-dark text-center text-lg-start" id="footer" style="color:white;">
+    <div class="text-denter p-3" style="background-color: rgba(0,0,0,0.2);">&copy {% now "Y" %} Copyrigth
+        <a class="text-light" href="#" style="text-decoration:none;">
+            <span style="color:greenyellow;">www.yourproject.com</span>
+
+        </a>
+    </div>
+
+   </footer>
+
+   <!-- Bootstrap 5 js -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <!-- Jquery -->
+   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+   <!-- Datatables jquery JS -->
+   <!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+   <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js"></script>
+
+   <!-- Datatable script-->
+
+   <script>
+ 
+   </script>
+
+</body>
+</html>
+
+<!---
+https://code.jquery.com/jquery-3.5.1.js
+https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js
+-->
+
+
